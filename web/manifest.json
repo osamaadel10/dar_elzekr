@@ -1,6 +1,6 @@
 {
-    "name": "ShareEdu Demo",
-    "short_name": "ShareEdu Demo",
+    "name": "مدارس دار الذكر",
+    "short_name": "مدارس دار الذكر",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

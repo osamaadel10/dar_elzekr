@@ -16,7 +16,6 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppbarW(
         title: 'login'.tr,
-        hasTrackingButton: false,
         hasLang: true,
         hasBackButton: true,
       ),

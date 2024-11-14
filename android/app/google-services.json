@@ -1,26 +1,45 @@
 {
   "project_info": {
-    "project_number": "398714753568",
-    "project_id": "fir-aac0c",
-    "storage_bucket": "fir-aac0c.appspot.com"
+    "project_number": "9643477109",
+    "firebase_url": "https://althikr.firebaseio.com",
+    "project_id": "althikr",
+    "storage_bucket": "althikr.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:398714753568:android:6481300b9cdfeac47ee245",
+        "mobilesdk_app_id": "1:9643477109:android:5503efbaaf52a65071d03c",
         "android_client_info": {
-          "package_name": "com.share.demo"
+          "package_name": "shareedu.daralthiker"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "9643477109-mii6esepolf1pjdombemn7i3a0o23aso.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCo90KDZEGvxJs_f7Zj_BwseFONqb5mR9Q"
+          "current_key": "AIzaSyCbAIsvOZm5KJMDtwPW9b1NkQ0UNTGZAMA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9643477109-mii6esepolf1pjdombemn7i3a0o23aso.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "9643477109-64ar5518ek50c9t0kni3f3bpbu119fum.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ShareEdu.althikrschools",
+                "app_store_id": "1487100743"
+              }
+            }
+          ]
         }
       }
     }

@@ -8,8 +8,11 @@ import 'package:shareedu_app/view/screens/splash/splash_screen.dart';
 import 'constant/varibles/global_varible.dart';
 import 'controllers/language/translation.dart';
 import 'package:flutter/services.dart';
+
 import 'models/notifcation.dart';
 
+String mainUrl = 'https://althikr-lms.net/';
+String partofmainUrl = 'althikr-lms.net';
 
 void main() async {
   await GetStorage.init();
@@ -22,16 +25,20 @@ void main() async {
     await box.write('lang', Get.deviceLocale.toString());
   }
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  if(await requestPermissionNotifcation())
-  {
-    FirebaseMessaging.onBackgroundMessage(firebaseMessageinginBackground);
-  }
-  
   runApp(const MyApp()); 
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    // request_permisson();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -47,5 +54,12 @@ class MyApp extends StatelessWidget {
       },
       child: const SplashScreen(),
     );
+  }
+}
+
+request_permisson()async{
+  if(await requestPermissionNotifcation())
+  {
+    FirebaseMessaging.onBackgroundMessage(firebaseMessageinginBackground);
   }
 }

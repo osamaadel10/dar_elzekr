@@ -47,7 +47,7 @@ Future<bool> requestPermissionNotifcation() async {
           android: AndroidInitializationSettings('@mipmap/ic_launcher'),
         ),
       );
-      
+
     }
   NotificationSettings settings = await messaging.requestPermission(
     alert: true,

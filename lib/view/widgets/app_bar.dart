@@ -1,4 +1,3 @@
-// ignore_for_file: use_super_parameters
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,18 +44,18 @@ class AppbarW extends StatelessWidget implements PreferredSizeWidget {
                 child: Row(children: [
                   hasBackButton
                       ? Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
-                        child: InkWell(
-                            onTap: (() {
-                              Get.back();
-                            }),
-                            child: Icon(
-                              CupertinoIcons.back,
-                              size: 28.h,
-                              color: Colors.white,
-                            ),
-                          ),
-                      )
+                    padding: const EdgeInsets.only(top: 5.0),
+                    child: InkWell(
+                      onTap: (() {
+                        Get.back();
+                      }),
+                      child: Icon(
+                        CupertinoIcons.back,
+                        size: 28.h,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
                       : const SizedBox(),
                   SizedBox(
                     width: 25.w,
@@ -64,38 +63,38 @@ class AppbarW extends StatelessWidget implements PreferredSizeWidget {
                   Padding(
                     padding: EdgeInsets.only(left: titlePadding,right: titlePadding,top: 5),
                     child: Text(
-                      title.tr,
-                      style:TextStyle(fontSize: 22.sp,
+                        title.tr,
+                        style:TextStyle(fontSize: 22.sp,
                             color: const Color(0xffBDEBFB))
                     ),
                   ),
                   const Spacer(),
                   hasTrackingButton
                       ? Padding(
-                    padding: const EdgeInsets.only(left: 5,top: 10),
-                    child: Transform.scale(scale: 0.9,child: const SwitchButton(),)
+                      padding: const EdgeInsets.only(left: 5,top: 10),
+                      child: Transform.scale(scale: 0.9,child: const SwitchButton(),)
                   )
                       : const SizedBox(),
                   hasLang
                       ? Padding(
-                        padding: const EdgeInsets.only(top: 5.0,left: 5),
-                        child: InkWell(
-                            onTap: () {
-                              changeLangeSheet(context);
-                            },
-                            child: const Icon(
-                              Icons.language_rounded,
-                              color: Color(0xffBDEBFB),
-                              size: 28,
-                            ),
-                          ),
-                      )
+                    padding: const EdgeInsets.only(top: 5.0,left: 5),
+                    child: InkWell(
+                      onTap: () {
+                        changeLangeSheet(context);
+                      },
+                      child: const Icon(
+                        Icons.language_rounded,
+                        color: Color(0xffBDEBFB),
+                        size: 28,
+                      ),
+                    ),
+                  )
                       : const SizedBox()
                 ])),
           ])),
     );
   }
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(100);
 }

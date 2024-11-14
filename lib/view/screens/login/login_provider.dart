@@ -15,10 +15,11 @@ import '../../widgets/top_loader.dart';
 class LoginProvider {
   Future<void> onLoginPressed(BuildContext context) async {
     TopLoader.startLoading(context);
-    String? token = await FirebaseMessaging.instance.getToken();
+    String? token =  '';
+    await FirebaseMessaging.instance.getToken();
     final int? userIndex = await _login(token, context);
 
-    if (userIndex == null || token == null) {
+    if (userIndex == null) {
       TopLoader.stopLoading(context);
       _showErrorMessage('loginError'.tr, context);
       return;

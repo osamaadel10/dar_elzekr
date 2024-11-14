@@ -16,7 +16,6 @@ class GuestScreen extends StatelessWidget {
       appBar: AppbarW(
         title: 'guestRegister'.tr,
         hasBackButton: true,
-        hasTrackingButton: false,
         hasLang: true,
       ),
       body: Directionality(
