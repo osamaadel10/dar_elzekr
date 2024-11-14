@@ -47,7 +47,6 @@ class TrackingServices {
       if(istracked == false){t.cancel(); return;}
       await getLocation();
       if (currentLocation != null) {
-        Get.snackbar(backgroundColor:Colors.white,dismissDirection: DismissDirection.down, "Current Location","LANG = ${currentLocation!.longitude} \n LAT = ${currentLocation!.latitude}");
         await sendLocation(
           TrackingModel(
               tokenId: LocalDatabase.getUserToken() ?? "",
@@ -65,7 +64,12 @@ class TrackingServices {
     try {
       currentLocation = await location.getLocation();
     } catch (e) {
-      Get.snackbar('error'.tr, "$e");
+      Get.snackbar('error'.tr, 'check location',
+          borderColor: Colors.red,
+          backgroundColor: Colors.redAccent,
+          borderWidth: 2,
+          colorText: Colors.white,
+          icon: Icon(Icons.error_outline,color:Colors.white ,size: 40));
     }
   }
 }
