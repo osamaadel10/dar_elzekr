@@ -15,10 +15,10 @@ String mainUrl = 'https://althikr-lms.net/';
 String partofmainUrl = 'althikr-lms.net';
 
 void main() async {
-  await GetStorage.init();
-  box = GetStorage();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await GetStorage.init();
+  box = GetStorage();
   String? storedLang = await box.read('lang');
   lang = storedLang != null ? Locale(storedLang) : Get.deviceLocale;
   if (storedLang == null) {
@@ -36,7 +36,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    // request_permisson();
+    request_permisson();
     super.initState();
   }
   @override

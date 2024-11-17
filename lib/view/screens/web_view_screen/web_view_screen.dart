@@ -82,7 +82,7 @@ class WebViewScreenState extends State<WebViewScreen> {
           children: [
             InAppWebView(
               initialUrlRequest: URLRequest(
-                url: Uri.parse(
+                url: WebUri(
                   "${widget.pageUrl}&UserLang=${LocalDatabase.getLanguageCode()}",
                 ),
               ),
@@ -136,13 +136,13 @@ class WebViewScreenState extends State<WebViewScreen> {
                     uri.host != partofmainUrl) {
                   await openLink(uri);
                   webViewController!.loadUrl(
-                    urlRequest: URLRequest(url: currentUrl),
+                    urlRequest: URLRequest(url: WebUri(currentUrl.toString())),
                   );
                   return NavigationActionPolicy.CANCEL;
                 } else if (uri.pathSegments.first == "DownloadFiles") {
                   await openLink(uri);
                   webViewController!.loadUrl(
-                    urlRequest: URLRequest(url: currentUrl),
+                    urlRequest: URLRequest(url: WebUri(currentUrl.toString())),
                   );
                   return NavigationActionPolicy.CANCEL;
                 } else if (uri.host == partofmainUrl ) {
@@ -150,7 +150,7 @@ class WebViewScreenState extends State<WebViewScreen> {
                 } else {
                   await openLink(uri);
                   webViewController!.loadUrl(
-                    urlRequest: URLRequest(url: currentUrl),
+                    urlRequest: URLRequest(url: WebUri(currentUrl.toString())),
                   );
                 }
                 return NavigationActionPolicy.CANCEL;
@@ -254,7 +254,7 @@ class WebViewScreenState extends State<WebViewScreen> {
           Navigator.of(context).pop();
         } else {
           webViewController!.loadUrl(
-            urlRequest: URLRequest(url: Uri.parse(widget.pageUrl)),
+            urlRequest: URLRequest(url: WebUri(widget.pageUrl)),
           );
         }
         break;

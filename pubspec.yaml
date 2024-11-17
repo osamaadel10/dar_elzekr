@@ -42,7 +42,7 @@ dependencies:
   firebase_core: ^3.3.0
   firebase_messaging: ^15.0.4
   url_launcher: ^6.3.0
-  flutter_inappwebview: ^5.7.2+1
+  flutter_inappwebview: ^6.1.5
   dio: ^5.6.0
   pretty_dio_logger: ^1.4.0
   local_auth: ^2.3.0
