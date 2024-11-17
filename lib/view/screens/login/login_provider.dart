@@ -4,22 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shareedu_app/constant/varibles/global_varible.dart';
-import 'package:shareedu_app/data/local_database.dart';
-import 'package:shareedu_app/view/screens/web_view_screen/web_view_screen.dart';
 import '../../../constant/urls/urls.dart';
+import '../../../constant/varibles/global_varible.dart';
 import '../../../controllers/authServices/auth_services.dart';
+import '../../../data/local_database.dart';
 import '../../../models/login_model.dart';
 import '../../widgets/top_loader.dart';
+import '../web_view_screen/web_view_screen.dart';
 
 class LoginProvider {
   Future<void> onLoginPressed(BuildContext context) async {
     TopLoader.startLoading(context);
-    String? token =  '';
-    await FirebaseMessaging.instance.getToken();
+    String? token = await FirebaseMessaging.instance.getToken();
     final int? userIndex = await _login(token, context);
 
-    if (userIndex == null) {
+    if (userIndex == null || token == null) {
       TopLoader.stopLoading(context);
       _showErrorMessage('loginError'.tr, context);
       return;
