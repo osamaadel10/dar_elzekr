@@ -174,15 +174,15 @@ class WebViewScreenState extends State<WebViewScreen> {
                   children: [
                     widget.isGuestPage
                         ? Icon(
-                            Icons.login_rounded,
-                            color: const Color.fromARGB(255, 120, 120, 120),
-                            size: 35.sp,
-                          )
+                      Icons.login_rounded,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                      size: 35.sp,
+                    )
                         : Icon(
-                            Icons.logout_rounded,
-                            color: const Color.fromARGB(255, 120, 120, 120),
-                            size: 35.sp,
-                          ),
+                      Icons.logout_rounded,
+                      color: const Color.fromARGB(255, 120, 120, 120),
+                      size: 35.sp,
+                    ),
                     const SizedBox(height: 3),
                     Text(
                       widget.isGuestPage ? 'login'.tr : 'logout'.tr,

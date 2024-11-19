@@ -1,5 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -16,7 +16,7 @@ String partofmainUrl = 'althikr-lms.net';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // await Firebase.initializeApp();
   await GetStorage.init();
   box = GetStorage();
   String? storedLang = await box.read('lang');
@@ -36,7 +36,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    request_permisson();
+    // request_permisson();
     super.initState();
   }
   @override
@@ -57,9 +57,9 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-request_permisson()async{
-  if(await requestPermissionNotifcation())
-  {
-    FirebaseMessaging.onBackgroundMessage(firebaseMessageinginBackground);
-  }
-}
+// request_permisson()async{
+//   if(await requestPermissionNotifcation())
+//   {
+//     FirebaseMessaging.onBackgroundMessage(firebaseMessageinginBackground);
+//   }
+// }

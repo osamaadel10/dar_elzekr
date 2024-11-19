@@ -14,6 +14,7 @@ import '../../main.dart';
 class send_location_Services {
   Timer? timer;
   Location location = Location();
+  late PermissionStatus permissionGranted ;
   LocationData? currentLocation;
 
   static Future<void> sendLocation(SendLocationModel sendLocation) async {
@@ -44,9 +45,7 @@ class send_location_Services {
   }
 
   Future<void> startsend() async {
-    PermissionStatus permissionGranted;
     bool serviceEnabled;
-
 
     permissionGranted = await location.hasPermission();
     if (permissionGranted == PermissionStatus.denied) {
