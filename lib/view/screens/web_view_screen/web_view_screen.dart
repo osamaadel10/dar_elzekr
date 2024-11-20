@@ -115,7 +115,7 @@ class WebViewScreenState extends State<WebViewScreen> {
                 Uri? currentUrl = await webViewController?.getUrl();
                 var uri = navigationAction.request.url!;
                 if (uri.pathSegments.contains('AutoCall.asp') ||
-                    uri.pathSegments.contains('AutoCallin.asp')) {
+                    uri.pathSegments.contains('AutoCallin.asp')||uri.pathSegments.contains('FingerEmp.asp')) {
                   setState(() {
                     issendlocation = true;
                   });
