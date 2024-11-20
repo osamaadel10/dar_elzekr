@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 import 'dart:io';
 import 'package:flutter/material.dart';
-// import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../constant/urls/urls.dart';
@@ -15,9 +15,8 @@ import '../web_view_screen/web_view_screen.dart';
 class LoginProvider {
   Future<void> onLoginPressed(BuildContext context) async {
     TopLoader.startLoading(context);
-    String? token = '';//await FirebaseMessaging.instance.getToken();
+    String? token = await FirebaseMessaging.instance.getToken();
     final int? userIndex = await _login(token, context);
-
     if (userIndex == null || token == null) {
       TopLoader.stopLoading(context);
       _showErrorMessage('loginError'.tr, context);

@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -29,6 +30,7 @@ class WebViewScreen extends StatefulWidget {
   @override
   WebViewScreenState createState() => WebViewScreenState();
 }
+FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
 
 class WebViewScreenState extends State<WebViewScreen> {
   late PullToRefreshController pullToRefreshController;
